@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-<link rel="stylesheet" href="../../static/style/login.css">
+<link rel="stylesheet" href="static/style/login.css">
 <title>Login</title>
 </head>
 <body class="text-center">
@@ -48,7 +48,8 @@
 </body>
 <script type="text/javascript">
 	function changeAction(){
-		$('.form-signin').attr('action','/register');
+		$('.form-signin').attr('action','/register.htm');
+		$('.form-signin').attr('method','GET');
 	}
 </script>
 </html>

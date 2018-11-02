@@ -14,12 +14,12 @@ public class LoginController {
 	//	return "Hello World";
 	//}
 	
-	@RequestMapping(value="/login", method=RequestMethod.GET)
+	@RequestMapping(value="/login.htm", method=RequestMethod.GET)
 	public String getLoginForm() {
 		return "Login";
 	}
 	
-	@RequestMapping(value="/login", method=RequestMethod.POST)
+	@RequestMapping(value="/login.htm", method=RequestMethod.POST)
 	public String doLogin(@RequestParam String name, @RequestParam String password, ModelMap map) {
 		//String name = request.getParameter("name");
 		//String password = request.getParameter("password");
