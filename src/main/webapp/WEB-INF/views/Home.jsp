@@ -17,6 +17,6 @@
 <link rel="stylesheet" href="static/style/dashboard.css">
 </head>
 <body>
-    
+    ${list}
 </body>
 </html>

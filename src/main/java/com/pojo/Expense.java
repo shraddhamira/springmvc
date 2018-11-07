@@ -8,6 +8,14 @@ public class Expense {
 	private String description;
 	private Date createDate;
 	private long userId;
+	
+	public Expense(long id, String description, Date createDate, long userId) {
+		super();
+		this.id = id;
+		this.description = description;
+		this.createDate = createDate;
+		this.userId = userId;
+	}
 
 	public long getId() {
 		return id;

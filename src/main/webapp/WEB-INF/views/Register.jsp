@@ -37,7 +37,8 @@
 			</div>
 		</div>
 		<div class="form-group row">
-			<button class="btn btn-lg btn-primary btn-block col-sm-8 mx-auto" type="submit" >Register</button>
+			<button class="btn btn-lg btn-primary btn-block col-sm-4 mx-auto" type="submit" >Register</button>
+			<button class="btn btn-lg btn-primary btn-block col-sm-4 mx-auto" type="submit" >Cancel</button>
 		</div>
 		<p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
 	</form>
