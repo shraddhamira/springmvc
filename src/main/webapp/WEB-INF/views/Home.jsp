@@ -18,5 +18,6 @@
 </head>
 <body>
     ${list}
+    <a class="button" href="/addExpense.htm">Add Expense</a>
 </body>
 </html>

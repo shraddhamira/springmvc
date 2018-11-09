@@ -36,7 +36,7 @@
 				<input type="password" class="form-control" required name="confirmPassword" placeholder="Retype Password">
 			</div>
 		</div>
-		<div class="form-group row">
+		<div class="form-group">
 			<button class="btn btn-lg btn-primary btn-block col-sm-4 mx-auto" type="submit" >Register</button>
 			<button class="btn btn-lg btn-primary btn-block col-sm-4 mx-auto" type="submit" >Cancel</button>
 		</div>

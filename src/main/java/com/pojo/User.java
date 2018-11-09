@@ -4,11 +4,30 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class User implements Serializable {
+	public User() {
+		super();
+	}
+
+	public User(Long id, String firstName, String lastName, String userName, String emailId, String password,
+			String securityQuestion, String securityAnswer, Date createDate, Date lastUpdateDate, String status) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.userName = userName;
+		this.emailId = emailId;
+		this.password = password;
+		this.securityQuestion = securityQuestion;
+		this.securityAnswer = securityAnswer;
+		this.createDate = createDate;
+		this.lastUpdateDate = lastUpdateDate;
+		this.status = status;
+	}
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1736733181752845673L; 
+	private static final long serialVersionUID = 1736733181752845673L;
 	private Long id;
 
 	private String firstName;
@@ -120,11 +139,9 @@ public class User implements Serializable {
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", firstName=" + firstName + ", lastName="
-				+ lastName + ", userName=" + userName + ", emailId=" + emailId
-				+ ", password=" + password + ", securityQuestion="
-				+ securityQuestion + ", securityAnswer=" + securityAnswer
-				+ ", createDate=" + createDate + ", lastUpdateDate="
+		return "User [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", userName=" + userName
+				+ ", emailId=" + emailId + ", password=" + password + ", securityQuestion=" + securityQuestion
+				+ ", securityAnswer=" + securityAnswer + ", createDate=" + createDate + ", lastUpdateDate="
 				+ lastUpdateDate + ", status=" + status + "]";
 	}
 
@@ -152,8 +169,8 @@ public class User implements Serializable {
 			return false;
 		return true;
 	}
-	
-	public void copyFrom(User u){
+
+	public void copyFrom(User u) {
 		this.setFirstName(u.getFirstName());
 		this.setLastName(u.getLastName());
 		this.setUserName(u.getUserName());

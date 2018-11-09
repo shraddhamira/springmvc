@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.pojo.User;
 import com.service.UserService;
@@ -19,7 +19,6 @@ import com.utility.Log;
 import com.validation.UserValidation;
 
 @Controller
-@SessionAttributes("user")
 public class LoginController {
 	private static @Log Logger LOG;
 	
@@ -30,20 +29,24 @@ public class LoginController {
 	UserService service;
 	
 	@RequestMapping(value="/login.htm", method=RequestMethod.GET)
-	public String getLoginForm() {
+	public String getLoginForm(HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		session.invalidate();
 		return "Login";
 	}
 	
 	
 	@RequestMapping(value="/login.htm", method=RequestMethod.POST)
-	public String doLogin(HttpServletRequest request,@RequestParam String name, @RequestParam String password, @ModelAttribute User user, ModelMap map) {
+	public String doLogin(HttpServletRequest request,@RequestParam String name, @RequestParam String password, @ModelAttribute User user, ModelMap map,
+			RedirectAttributes redirectAttributes) {
 		LOG.debug(validate.isUserValid(name, password));
 		if (validate.isUserValid(name, password)) {
-			map.put("name", name);
 			user = service.getUser(name, password);
-			map.addAttribute("user",user);
-			//HttpSession session = request.getSession();
-			//session.setAttribute("userId", user.getId());
+			//redirectAttributes.addAttribute("userid", user.getId());
+			HttpSession session = request.getSession();
+			session.invalidate();
+			session = request.getSession(true);
+			session.setAttribute("userId", user.getId());
 			return "redirect:home.htm";
 		} else {
 			map.put("name", name);	

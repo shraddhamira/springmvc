@@ -1,14 +1,13 @@
 package com.utility;
 
 
+import java.lang.reflect.Field;
+
 import org.apache.log4j.Logger;
-import org.apache.log4j.spi.LoggerFactory;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.stereotype.Component;
 import org.springframework.util.ReflectionUtils;
-
-import java.lang.reflect.Field;
 
 @Component
 public class LogInjector implements BeanPostProcessor {
