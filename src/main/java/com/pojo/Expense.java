@@ -2,12 +2,14 @@ package com.pojo;
 
 import java.util.Date;
 
-public class Expense {
+public class   {
 
 	private Long id;
 	private String description;
 	private Date createDate;
 	private Long userId;
+	private Float amount;
+	private Long subCategoryId;
 	
 	public Expense(Long id, String description, Date createDate, Long userId) {
 		super();
@@ -49,11 +51,34 @@ public class Expense {
 		this.userId = userId;
 	}
 
-	@Override
-	public String toString() {
-		return "Expense [id=" + id + ", description=" + description + ", createDate=" + createDate + ", userId="
-				+ userId + "]";
+	/**
+	 * @return the amount
+	 */
+	public Float getAmount() {
+		return amount;
 	}
+
+	/**
+	 * @param amount the amount to set
+	 */
+	public void setAmount(Float amount) {
+		this.amount = amount;
+	}
+
+	/**
+	 * @return the subCategoryId
+	 */
+	public Long getSubCategoryId() {
+		return subCategoryId;
+	}
+
+	/**
+	 * @param subCategoryId the subCategoryId to set
+	 */
+	public void setSubCategoryId(Long subCategoryId) {
+		this.subCategoryId = subCategoryId;
+	}
+
 
 	@Override
 	public int hashCode() {
@@ -75,5 +100,13 @@ public class Expense {
 		if (id != other.id)
 			return false;
 		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "Expense [id=" + id + ", description=" + description
+				+ ", createDate=" + createDate + ", userId=" + userId
+				+ ", amount=" + amount + ", subCategoryId=" + subCategoryId
+				+ "]";
 	}
 }

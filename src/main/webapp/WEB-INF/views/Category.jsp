@@ -9,7 +9,7 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
-<title>Todo - Home</title>
+<title>Todo - Category</title>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 	integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
 	crossorigin="anonymous"></script>
@@ -28,16 +28,13 @@
 		<thead>
 			<tr>
 				<th>Description</th>
-				<th>Amount</th>
-				<th>On Date</th>
-				<th>User</th>
+				<th>Actions</th>
 			</tr>
 		</thead>
 		<c:forEach items="${list}" var="detail">
+
 			<tr>
 				<td>${detail.description}</td>
-				<td>${detail.amount}</td>
-				<td>${detail.createDate}</td>
 				<td>${detail.userId}</td>
 			</tr>
 		</c:forEach>

@@ -28,17 +28,16 @@
 		<thead>
 			<tr>
 				<th>Description</th>
-				<th>Amount</th>
-				<th>On Date</th>
-				<th>User</th>
+				<th>Parent Category</th>
+				<th>Actions</th>
 			</tr>
 		</thead>
 		<c:forEach items="${list}" var="detail">
+
 			<tr>
 				<td>${detail.description}</td>
-				<td>${detail.amount}</td>
-				<td>${detail.createDate}</td>
-				<td>${detail.userId}</td>
+				<td>${detail.parentCategoryDescription}</td>
+				<td></td>
 			</tr>
 		</c:forEach>
 	</table>
