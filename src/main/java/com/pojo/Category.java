@@ -3,6 +3,7 @@ package com.pojo;
 public class Category {
 	private Long id;
 	private String description;
+	private Long userId;
 
 	public String getDescription() {
 		return description;
@@ -20,10 +21,25 @@ public class Category {
 		this.id = id;
 	}
 
-	public Category(Long id, String description) {
+	/**
+	 * @return the userId
+	 */
+	public Long getUserId() {
+		return userId;
+	}
+
+	/**
+	 * @param userId the userId to set
+	 */
+	public void setUserId(Long userId) {
+		this.userId = userId;
+	}
+
+	public Category(Long id, String description, Long userId) {
 		super();
 		this.id = id;
 		this.description = description;
+		this.userId= userId;
 	}
 
 	@Override

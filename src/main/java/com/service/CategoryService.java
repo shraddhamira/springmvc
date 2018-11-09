@@ -19,16 +19,21 @@ public class CategoryService {
 	static List<Category> list = new ArrayList<Category>();
 
 	static {
-		list.add(new Category(1L, "Grocery"));
-		list.add(new Category(1L, "Investment"));
+		list.add(new Category(1L, "Grocery",1001L));
+		list.add(new Category(1L, "Investment",1002L));
 	}
 
-	public List<Category> getAllCategories() {
+	public List<Category> getAllCategories(Long userId) {
+		List<Category> list = new ArrayList<Category>();
+		for (Category category : this.list) {
+			if(category.getUserId().equals(userId))
+				list.add(category);
+		}
 		return list;
 	}
 
-	public void addCategory(String description) {
-		Category category = new Category(list.size() + 1L, description);
+	public void addCategory(String description, Long userId) {
+		Category category = new Category(list.size() + 1L, description, userId);
 		list.add(category);
 	}
 

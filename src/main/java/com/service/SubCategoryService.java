@@ -3,22 +3,29 @@ package com.service;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.pojo.SubCategory;
+import org.springframework.stereotype.Service;
 
+import com.pojo.SubCategory;
+@Service
 public class SubCategoryService {
 	static List<SubCategory> list = new ArrayList<SubCategory>();
 
 	static {
-		list.add(new SubCategory(1L, 2L,"Mutual Funds"));
-		list.add(new SubCategory(2L,2L, "RD"));
+		list.add(new SubCategory(1L, 2L,"Mutual Funds",1001L));
+		list.add(new SubCategory(2L,2L, "RD",1001L));
 	}
 
-	public List<SubCategory> getAllCategories() {
+	public List<SubCategory> getAllSubCategories(Long userId) {
+		List<SubCategory> list = new ArrayList<SubCategory>();
+		for (SubCategory category : SubCategoryService.list) {
+			if(category.getUserId().equals(userId))
+				list.add(category);
+		}
 		return list;
 	}
 
-	public void addSubCategory(String description, Long parentCategoryId) {
-		SubCategory SubCategory = new SubCategory(list.size() + 1L,parentCategoryId, description);
+	public void addSubCategory(String description, Long parentCategoryId, Long userId) {
+		SubCategory SubCategory = new SubCategory(list.size() + 1L,parentCategoryId, description, userId);
 		list.add(SubCategory);
 	}
 

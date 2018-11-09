@@ -2,7 +2,7 @@ package com.pojo;
 
 import java.util.Date;
 
-public class   {
+public class Expense  {
 
 	private Long id;
 	private String description;

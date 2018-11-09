@@ -23,9 +23,6 @@ public class HomeController {
 	
 	@RequestMapping(value="/home.htm", method=RequestMethod.GET)
 	public String getHomePage(HttpServletRequest request, ModelMap map){
-		HttpSession session = request.getSession();
-		Long userId = (Long) session.getAttribute("userId");
-		map.put("list", this.service.getAllExpenses(userId));
 		return "Home";
 	}
 
