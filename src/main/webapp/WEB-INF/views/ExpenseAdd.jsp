@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,6 +35,18 @@
 			<label for="date" class="col-sm-6 sr-only col-form-label">On Date</label>
 			<div class="col-sm-12">
 				<input type="date" class="form-control" required name="createDate" placeholder="On Date">
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="subCategoryId" class="col-sm-6 sr-only col-form-label">Category</label>
+			<div class="col-sm-12">
+				<select class="form-control" name="subCategoryId">
+					<option value="">Select Category</option>
+					<c:forEach items="${subCategoryList}" var="subCategory">
+						<option value="${subCategory.id}"><c:out value="${subCategory.description}"></c:out>
+						</option>
+					</c:forEach>
+				</select>
 			</div>
 		</div>
 		<div class="form-group">

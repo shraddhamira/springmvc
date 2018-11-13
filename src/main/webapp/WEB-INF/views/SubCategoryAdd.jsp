@@ -28,10 +28,10 @@
 		<div class="form-group row">
 			<label for="description" class="col-sm-6 sr-only col-form-label">Parent Category</label>
 			<div class="col-sm-12">
-				<select class="form-control" name="parentCategotyId">
+				<select class="form-control" name="parentCategoryId">
 					<option value="">Select Category</option>
 					<c:forEach items="${categoryList}" var="category">
-						<option value="${category.id }"><c:out value="${category.description}"></c:out>
+						<option value="${category.id}"><c:out value="${category.description}"></c:out>
 						</option>
 					</c:forEach>
 				</select>

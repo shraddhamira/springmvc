@@ -6,26 +6,29 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.pojo.SubCategory;
+
 @Service
 public class SubCategoryService {
 	static List<SubCategory> list = new ArrayList<SubCategory>();
 
 	static {
-		list.add(new SubCategory(1L, 2L,"Mutual Funds",1001L));
-		list.add(new SubCategory(2L,2L, "RD",1001L));
+		list.add(new SubCategory(1001L, 1002L, "Mutual Funds", 1001L));
+		list.add(new SubCategory(1002L, 1002L, "RD", 1001L));
 	}
 
 	public List<SubCategory> getAllSubCategories(Long userId) {
 		List<SubCategory> list = new ArrayList<SubCategory>();
 		for (SubCategory category : SubCategoryService.list) {
-			if(category.getUserId().equals(userId))
+			if (category.getUserId().equals(userId))
 				list.add(category);
 		}
 		return list;
 	}
 
-	public void addSubCategory(String description, Long parentCategoryId, Long userId) {
-		SubCategory SubCategory = new SubCategory(list.size() + 1L,parentCategoryId, description, userId);
+	public void addSubCategory(String description, Long parentCategoryId,
+			Long userId) {
+		SubCategory SubCategory = new SubCategory(list.size() + 1L,
+				parentCategoryId, description, userId);
 		list.add(SubCategory);
 	}
 

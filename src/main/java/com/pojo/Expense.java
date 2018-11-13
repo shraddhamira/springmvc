@@ -2,7 +2,9 @@ package com.pojo;
 
 import java.util.Date;
 
-public class Expense  {
+import org.springframework.format.annotation.DateTimeFormat;
+
+public class Expense {
 
 	private Long id;
 	private String description;
@@ -10,13 +12,16 @@ public class Expense  {
 	private Long userId;
 	private Float amount;
 	private Long subCategoryId;
-	
-	public Expense(Long id, String description, Date createDate, Long userId) {
+
+	public Expense(Long id, String description, Date createDate, Long userId,
+			Long subCategoryId, Float amount) {
 		super();
 		this.id = id;
 		this.description = description;
 		this.createDate = createDate;
 		this.userId = userId;
+		this.subCategoryId = subCategoryId;
+		this.amount = amount;
 	}
 
 	public Long getId() {
@@ -59,7 +64,8 @@ public class Expense  {
 	}
 
 	/**
-	 * @param amount the amount to set
+	 * @param amount
+	 *            the amount to set
 	 */
 	public void setAmount(Float amount) {
 		this.amount = amount;
@@ -73,12 +79,12 @@ public class Expense  {
 	}
 
 	/**
-	 * @param subCategoryId the subCategoryId to set
+	 * @param subCategoryId
+	 *            the subCategoryId to set
 	 */
 	public void setSubCategoryId(Long subCategoryId) {
 		this.subCategoryId = subCategoryId;
 	}
-
 
 	@Override
 	public int hashCode() {
